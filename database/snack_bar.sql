@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/05/2019 às 23:48
+-- Tempo de geração: 06/06/2019 às 23:05
 -- Versão do servidor: 5.6.37
 -- Versão do PHP: 7.1.8
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `cardapio` (
   `cod_produto` int(11) NOT NULL,
   `nome_produto` varchar(50) NOT NULL,
   `valor_prod` decimal(5,2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Fazendo dump de dados para tabela `cardapio`
@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `cardapio` (
 INSERT INTO `cardapio` (`cod_produto`, `nome_produto`, `valor_prod`) VALUES
 (1, 'Porção de batata', 12.00),
 (2, 'Porção de calabresa', 14.00),
-(3, 'Porção de peixe', 16.00);
+(3, 'Porção de peixe', 16.00),
+(4, 'Porção de cebola', 10.00);
 
 -- --------------------------------------------------------
 
@@ -53,16 +54,16 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `login` varchar(20) NOT NULL,
   `senha` varchar(100) NOT NULL,
   `frase_secreta` varchar(10) NOT NULL,
-  `tipo` char(1) NOT NULL,
   `lanchonete` varchar(18) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Fazendo dump de dados para tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nome`, `login`, `senha`, `frase_secreta`, `tipo`, `lanchonete`) VALUES
-(1, 'Juliana', 'Juliana_01', '123', 'nome', '0', '95.124.240/0001-04');
+INSERT INTO `cliente` (`id`, `nome`, `login`, `senha`, `frase_secreta`, `lanchonete`) VALUES
+(1, 'Juliana', 'Juliana_01', '123', 'nome', '95.124.240/0001-04'),
+(7, 'teste', 'teste', 'teste', 'teste', '95.124.240/0001-04');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `lanchonete` (
 --
 
 INSERT INTO `lanchonete` (`cnpj`, `telefone`, `cep`, `endereco`, `razao_social`) VALUES
-('95.124.240/0001-04', '40228459', '13311123', 'Rua Cleto Fanchini', 'Shalow Now');
+('95.124.240/0001-04', '(11) 4022-8459', '13311123', 'Rua Cleto Fanchini', 'Shalow Now');
 
 -- --------------------------------------------------------
 
@@ -159,12 +160,12 @@ ALTER TABLE `quantidade_produto_pedido`
 -- AUTO_INCREMENT de tabela `cardapio`
 --
 ALTER TABLE `cardapio`
-  MODIFY `cod_produto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `cod_produto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de tabela `pedido`
 --
