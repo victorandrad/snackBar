@@ -27,7 +27,7 @@ function categoria($is)
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Teste Back-End NanoIncub</title>
+    <title>Snack Bar</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
