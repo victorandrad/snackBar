@@ -106,7 +106,8 @@ $result3 = mysqli_query($db, $query_lanchonete);
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Sobre o restaurante</h2>
                     <p>
-                        -----
+                        A lanchonete Snack Bar possui um amplo cardápio, com comidas e bebidas diferenciadas, feitas com
+                        os melhores ingredientes, pratos bem servidos, com valores acessiveis.
                     </p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

@@ -97,6 +97,10 @@ function categoria($is)
                     <li>
                         <a href="index.php"><i class="fa fa-product-hunt fa-fw"></i> Produtos</a>
                     </li>
+
+<!--                    <li>-->
+<!--                        <a href="categoria.php"><i class="fa fa-list fa-fw"></i> Categoria</a>-->
+<!--                    </li>-->
                 </ul>
             </div>
 

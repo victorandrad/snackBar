@@ -62,7 +62,8 @@ $result3 = mysqli_query($db, $query_cardapio);
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/lanchonete.jpg'); background-position: center"
+<section class="hero-wrap hero-wrap-2 js-fullheight"
+         style="background-image: url('images/lanchonete.jpg'); background-position: center"
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -83,16 +84,15 @@ $result3 = mysqli_query($db, $query_cardapio);
         </div>
         <div class="row">
 
-        <?php while ($cardapio_res = mysqli_fetch_array($result3)) {?>
-            <div class="col-md-4 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <h1 class="heading-2 my-4"><?php echo $cardapio_res['nome_produto']; ?></h1>
-                        <span class="price"><span class="number">R$<?php echo $cardapio_res['valor_prod']; ?></span></span>
-                        <input type="submit" class="btn btn-primary py-3 px-5" value="Pedir este item"></input>
+            <?php while ($cardapio_res = mysqli_fetch_array($result3)) { ?>
+                <div class="col-md-4 ftco-animate">
+                    <div class="block-7">
+                        <div class="text-center">
+                            <h1 class="heading-2 my-4"><?php echo $cardapio_res['nome_produto']; ?></h1>
+                            <span class="price"><span class="number">R$<?php echo $cardapio_res['valor_prod']; ?></span></span>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>
@@ -105,7 +105,8 @@ $result3 = mysqli_query($db, $query_cardapio);
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Sobre o restaurante</h2>
                     <p>
-                        -----
+                        A lanchonete Snack Bar possui um amplo cardápio, com comidas e bebidas diferenciadas, feitas com
+                        os melhores ingredientes, pratos bem servidos, com valores acessiveis.
                     </p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

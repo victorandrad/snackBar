@@ -1,5 +1,5 @@
 <?php
-include ('controles/session.php');
+include('controles/session.php');
 
 $query_lanchonete = "SELECT * FROM lanchonete";
 $result = mysqli_query($db, $query_lanchonete);
@@ -65,7 +65,8 @@ $result2 = mysqli_query($db, $query_lanchonete);
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
              data-scrollax-parent="true">
             <div class="col-xl-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color: #ffffff !important;">
+                <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
+                    style="color: #ffffff !important;">
                     Snack Bar <br>
                     <span>Desde 1998</span>
                 </h1>
@@ -77,7 +78,7 @@ $result2 = mysqli_query($db, $query_lanchonete);
 <section class="ftco-section services-section bg-light">
     <div class="container">
         <div class="row d-flex">
-            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-block">
                     <div class="icon"><span class="flaticon-placeholder"></span></div>
                     <div class="media-body">
@@ -85,42 +86,26 @@ $result2 = mysqli_query($db, $query_lanchonete);
                         <?php
 
                         while ($row = mysqli_fetch_array($result)) {
-                            echo '<h3 class="heading mb-3">Venue</h3>
+                            echo '<h3 class="heading mb-3">Endereço</h3>
                         <p>' . $row['endereco'] . ' - ' . $row['cep'] . '</p>';
                         }
                         ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-block">
                     <div class="icon"><span class="flaticon-world"></span></div>
                     <div class="media-body">
-                        <h3 class="heading mb-3">Transport</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services d-block">
-                    <div class="icon"><span class="flaticon-hotel"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Hotel</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services d-block">
-                    <div class="icon"><span class="flaticon-cooking"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Restaurant</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
+                        <h3 class="heading mb-3">Sobre o restaureante.</h3>
+                        <p>
+                            A lanchonete Snack Bar possui um amplo cardápio, com comidas e bebidas diferenciadas, feitas
+                            com os melhores ingredientes, pratos bem servidos, com valores acessiveis.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -130,7 +115,8 @@ $result2 = mysqli_query($db, $query_lanchonete);
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Sobre o restaurante</h2>
                     <p>
-                        -----
+                        A lanchonete Snack Bar possui um amplo cardápio, com comidas e bebidas diferenciadas, feitas com
+                        os melhores ingredientes, pratos bem servidos, com valores acessiveis.
                     </p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
