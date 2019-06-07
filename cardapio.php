@@ -8,7 +8,6 @@ $result2 = mysqli_query($db, $query_lanchonete);
 $result3 = mysqli_query($db, $query_cardapio);
 
 
-//var_dump($result3);
 ?>
 
 <!DOCTYPE html>
@@ -90,6 +89,14 @@ $result3 = mysqli_query($db, $query_cardapio);
                         <div class="text-center">
                             <h1 class="heading-2 my-4"><?php echo $cardapio_res['nome_produto']; ?></h1>
                             <span class="price"><span class="number">R$<?php echo $cardapio_res['valor_prod']; ?></span></span>
+                            <form method="post" action="controles/inserir_pedido.php">
+                                <input class="form-control" type="hidden"
+                                       value="<?php echo $cardapio_res['cod_produto']; ?>" name="id">
+                                <input class="form-control" type="hidden"
+                                       value="<?php echo $cardapio_res['valor_prod']; ?>" name="valor">
+                                <input type="submit" class="btn btn-primary py-3 px-5" value="Pedir este item">
+                            </form>
+
                         </div>
                     </div>
                 </div>
