@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/06/2019 às 23:05
+-- Tempo de geração: 07/06/2019 às 00:12
 -- Versão do servidor: 5.6.37
 -- Versão do PHP: 7.1.8
 
@@ -93,24 +93,19 @@ INSERT INTO `lanchonete` (`cnpj`, `telefone`, `cep`, `endereco`, `razao_social`)
 --
 
 CREATE TABLE IF NOT EXISTS `pedido` (
-  `data_pedido` date NOT NULL,
+  `data_pedido` timestamp NOT NULL,
   `num_pedido` int(11) NOT NULL,
-  `num_mesa` int(2) NOT NULL,
-  `status_ped` enum('aberto','encerrado') CHARACTER SET latin1 NOT NULL,
-  `valor` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
+  `valor` decimal(10,2) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Estrutura para tabela `quantidade_produto_pedido`
+-- Fazendo dump de dados para tabela `pedido`
 --
 
-CREATE TABLE IF NOT EXISTS `quantidade_produto_pedido` (
-  `num_pedido` int(11) NOT NULL,
-  `cod_produto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `pedido` (`data_pedido`, `num_pedido`, `valor`, `item_id`) VALUES
+('0000-00-00 00:00:00', 26, 12.00, 1),
+('0000-00-00 00:00:00', 27, 10.00, 4);
 
 --
 -- Índices de tabelas apagadas
@@ -143,14 +138,8 @@ ALTER TABLE `lanchonete`
 -- Índices de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`num_pedido`);
-
---
--- Índices de tabela `quantidade_produto_pedido`
---
-ALTER TABLE `quantidade_produto_pedido`
-  ADD PRIMARY KEY (`num_pedido`,`cod_produto`),
-  ADD KEY `cod_produto` (`cod_produto`);
+  ADD PRIMARY KEY (`num_pedido`),
+  ADD KEY `item_id` (`item_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de tabelas apagadas
@@ -170,7 +159,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `num_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `num_pedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- Restrições para dumps de tabelas
 --
@@ -182,11 +171,10 @@ ALTER TABLE `cliente`
   ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`lanchonete`) REFERENCES `lanchonete` (`cnpj`);
 
 --
--- Restrições para tabelas `quantidade_produto_pedido`
+-- Restrições para tabelas `pedido`
 --
-ALTER TABLE `quantidade_produto_pedido`
-  ADD CONSTRAINT `quantidade_produto_pedido_ibfk_1` FOREIGN KEY (`num_pedido`) REFERENCES `pedido` (`num_pedido`),
-  ADD CONSTRAINT `quantidade_produto_pedido_ibfk_2` FOREIGN KEY (`cod_produto`) REFERENCES `cardapio` (`cod_produto`);
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `cardapio` (`cod_produto`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
